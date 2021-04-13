@@ -1,0 +1,29 @@
+#include <stdlib.h>
+#include <stdio.h>
+
+// ARM: 32-bit little endian
+// int = 4 bytes
+// short = 2 bytes
+// char = 1 byte
+
+struct foo {
+    unsigned char a;
+    // char pad[1]
+    unsigned short b;
+    unsigned int c;
+    unsigned char d;
+    // char pad[3]
+};
+
+int main() {
+    struct foo *mem = malloc(sizeof(struct foo));
+    memset(mem, 0, sizeof(*mem));
+    
+    *(unsigned int *)mem = 0x12345678;
+    // 0x78, 0x56, 0x34, 0x12
+    
+    struct foo *f = mem;
+    
+    printf("%x %x %x %x\n", f->a, f->b, f->c, f->d);
+    // 0x78,  0x1234, 0x0, 0x0
+}

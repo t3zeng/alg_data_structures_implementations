@@ -1,0 +1,39 @@
+Constants:
+
+nRF52_RAM_LIMIT = 1024
+nRF51_RAM_LIMIT = 512
+
+Given an output of:
+
+Size of Application Image: nRF52
+  FLASH     RAM 
+    392     381 *fill*
+  22951   20458 apps_app.a
+   3102       0 crypto_tinycrypt.a
+    595       0 encoding_base64.a
+   1694       0 fs_fcb.a
+   4052      50 libc_baselibc.a
+  35582    8557 nimble_controller.a
+   2352     576 nimble_drivers_nrf52.a
+  41662    8554 nimble_host.a
+    653    3832 nimble_transport_ram.a
+    276       0 ringbuf.a
+   2317     222 sys_config.a
+    453      36 sys_console_full.a
+    678     128 sys_flash_map.a
+    788      45 sys_log_full.a
+    392     264 sys_log_modlog.a
+    550      29 sys_mfg.a
+     30       5 sys_sysinit.a
+    620       0 util_crc.a
+    122       0 util_mem.a
+    226       0 util_rwlock.a
+    170       0 app-reader-sysinit-app.a
+     12     100 libg_nano.a
+   2208       1 libm.a
+   3872       0 libgcc.a
+
+objsize
+   tex    data    bss    dec    hex    filename
+   512    1612    203    8888    3d73c    /root/project/bin/app/apps/app.elf
+end
